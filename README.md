@@ -1,1 +1,1 @@
-# Flexmonster tool to convert XML pivot reports to JSON format
+# Convert XML pivot reports to JSON format
