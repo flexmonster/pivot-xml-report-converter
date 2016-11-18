@@ -33,7 +33,7 @@
     function convertDataSource(xml, output) {
         var dataSource = xml.find("dataSource");
         if (dataSource.length > 0) {
-            output.dataSource = {};
+            output.dataSource = output.dataSource || {};
             var dataSourceType = dataSource.attr("type");
             if (dataSourceType !== undefined) {
                 output.dataSource.dataSourceType = dataSourceType.toLowerCase();
@@ -114,7 +114,7 @@
     function convertSlice(xml, output) {
         var slice = xml.find("defaultSlice");
         if (slice.length > 0) {
-            output.slice = {};
+            output.slice = output.slice || {};
             // row axis
             var axis = xml.find("defaultSlice axes axis[name=rows]");
             if (axis.find("hierarchy").length > 0) {
@@ -402,7 +402,7 @@
     }
 
     function convertOptionsGrid(xml, options) {
-        options.grid = {};
+        options.grid = options.grid || {};
         var params = xml.find("params");
         if (params.find("param[name=classicView]").length != 0 && toBoolean(params.find("param[name=classicView]").text())) {
             options.grid.type = "classic";
@@ -449,7 +449,7 @@
     }
 
     function convertOptionsChart(xml, options) {
-        options.chart = {};
+        options.chart = options.chart || {};
         var params = xml.find("params");
         var chartTypeXML = params.find("param[name=chartType]");
         if (chartTypeXML.length != 0) {
@@ -508,7 +508,7 @@
     function convertOptions(xml, output) {
         var params = xml.find("params");
         if (params.length > 0) {
-            output.options = {};
+            output.options = output.options || {};
             convertOptionsGrid(xml, output.options);
             convertOptionsChart(xml, output.options);
             var options = output.options;
@@ -581,7 +581,7 @@
     function convertFormats(xml, output) {
         var formats = xml.find("format");
         if (formats.length > 0) {
-            output.formats = [];
+            output.formats = output.formats || [];
             for (var i = 0; i < formats.length; i++) {
                 var format = formatFromXML(formats.eq(i));
                 output.formats.push(format);
@@ -636,7 +636,7 @@
     function convertConditions(xml, output) {
         var conditions = xml.find("conditions condition");
         if (conditions.length > 0) {
-            output.conditions = [];
+            output.conditions = output.conditions || [];
             for (var i = 0; i < conditions.length; i++) {
                 var condition = conditionFromXML(conditions.eq(i));
                 output.conditions.push(condition);
@@ -691,12 +691,48 @@
     }
 
     function convertSizes(xml, output) {
-        // output.tableSizes = {};
-        // reportVO.columnHeaderSizes = ReportValueObject.headerSizesFromXML(xml.find("view column[headerIdx]"));
-        // reportVO.columnSizes = ReportValueObject.sizesFromXML(xml.find("view column"));
-        // reportVO.rowHeaderSizes = ReportValueObject.headerSizesFromXML(xml.find("view row[headerIdx]"));
-        // reportVO.rowSizes = ReportValueObject.sizesFromXML(xml.find("view row"));
-        // reportVO.rowFilterSizes = ReportValueObject.filterSizesFromXML(xml.find("view row[filterIdx]"));
+        var rows = xml.find("view row");
+        if (rows.length > 0) {
+            output.tableSizes = output.tableSizes || {};
+            output.tableSizes.rows = output.tableSizes.rows || [];
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows.eq(i);
+                if (row.attr("headerIdx") !== undefined) {
+                    output.tableSizes.rows.push({
+                        "idx": parseInt(row.attr("headerIdx")),
+                        "height": parseInt(row.text())
+                    });
+                } else {
+                    var tuple = row.text().split(",");
+                    var height = parseInt(tuple.pop());
+                    output.tableSizes.rows.push({
+                        "tuple": tuple,
+                        "height": height
+                    });
+                }
+            }
+        }
+        var columns = xml.find("view column");
+        if (columns.length > 0) {
+            output.tableSizes = output.tableSizes || {};
+            output.tableSizes.columns = output.tableSizes.columns || [];
+            for (var i = 0; i < columns.length; i++) {
+                var column = columns.eq(i);
+                if (column.attr("headerIdx") !== undefined) {
+                    output.tableSizes.columns.push({
+                        "idx": parseInt(column.attr("headerIdx")),
+                        "width": parseInt(column.text())
+                    });
+                } else {
+                    var tuple = column.text().split(",");
+                    var width = parseInt(tuple.pop());
+                    output.tableSizes.columns.push({
+                        "tuple": tuple,
+                        "width": width
+                    });
+                }
+            }
+        }
     }
 
     function convertCustomFields(xml, output) {
