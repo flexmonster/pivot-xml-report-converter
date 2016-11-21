@@ -9,6 +9,6 @@ var xml = '<config>' +
             '<dataSource type="csv">' +
               '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
             '</dataSource>' +
-          "</config>";
+          '</config>';
 var json = fmCovertXmlReport(xml);
 ```
