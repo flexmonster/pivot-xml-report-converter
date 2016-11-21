@@ -57,20 +57,6 @@ button {
         var json = fmCovertXmlReport(xml);
         $('#fm-json').text(json);
     }
-
-    function loadXML() {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", "test/input-1.xml", true);
-        rawFile.onreadystatechange = function() {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
-                    $('#fm-xml').text(rawFile.responseText);
-                }
-            }
-        };
-        rawFile.send(null);
-    }
-    //loadXML();
     </script>
 </body>
 

@@ -691,6 +691,7 @@
     }
 
     function convertSizes(xml, output) {
+        var hasPages = xml.find("defaultSlice axes axis[name=pages] hierarchy").length > 0;
         var rows = xml.find("view row");
         if (rows.length > 0) {
             output.tableSizes = output.tableSizes || {};
@@ -699,7 +700,12 @@
                 var row = rows.eq(i);
                 if (row.attr("headerIdx") !== undefined) {
                     output.tableSizes.rows.push({
-                        "idx": parseInt(row.attr("headerIdx")),
+                        "idx": parseInt(row.attr("headerIdx")) + (hasPages ? 3 : 0),
+                        "height": parseInt(row.text())
+                    });
+                } else if (row.attr("filterIdx") !== undefined) {
+                    output.tableSizes.rows.push({
+                        "idx": parseInt(row.attr("filterIdx")),
                         "height": parseInt(row.text())
                     });
                 } else {
