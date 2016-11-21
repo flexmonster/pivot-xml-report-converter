@@ -11,4 +11,5 @@ var xml = '<config>' +
             '</dataSource>' +
           '</config>';
 var json = fmCovertXmlReport(xml);
+console.log(json);
 ```
