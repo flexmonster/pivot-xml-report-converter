@@ -1,6 +1,7 @@
 (function() {
     window.fmCovertXmlReport = function(input) {
-        return JSON.stringify(convert(input), null, 2);
+        var output = convert(input);
+        return JSON.stringify(output, null, 2) + convertEmbeddedData(output, input);
     }
 
     function convert(input) {
@@ -18,7 +19,7 @@
             convertConditions(xml, output);
             convertSizes(xml, output);
             convertCustomFields(xml, output);
-            converLocalization(xml, output);
+            convertLocalization(xml, output);
         } catch (e) {
             console.error(e);
             alert(e.toString());
@@ -754,7 +755,7 @@
         }
     }
 
-    function converLocalization(xml, output) {
+    function convertLocalization(xml, output) {
         if (xml.find("param[name=localSettingsUrl]").length != 0) { // backward compatibility
             output.localization = xml.find("param[name=localSettingsUrl]").text();
         }
@@ -762,4 +763,11 @@
             output.localization = xml.find("param[name=localization]").text();
         }
     }
+
+    function convertEmbeddedData(output, input) {
+        var pointer = -1;
+        if ((pointer = input.indexOf("<!--")) > -1) {
+        }
+    }
+    
 })();
