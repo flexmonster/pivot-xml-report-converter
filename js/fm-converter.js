@@ -767,9 +767,10 @@
     function convertEmbeddedData(output, input) {
         var embeddedData = "";
         if (output.dataSource.hasOwnProperty("embedded") && output.dataSource.embedded == false ) return embeddedData;
-        var pointer = -1;
-        if ((pointer = input.indexOf("<!--")) > -1) {
-            embeddedData += '\n' + input.substring(pointer).replace("<!--","/**----**").replace("-->","**--!--**/");
+        var pointerConfigSign = input.indexOf("</config>");
+        var pointerStartSign = input.indexOf("<!--",pointerConfigSign);
+        if (pointerStartSign > -1) {
+            embeddedData += '\n' + input.substring(pointerStartSign).replace("<!--","/**----**").replace("-->","**--!--**/");
         }
         return embeddedData;
     }
