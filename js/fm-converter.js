@@ -172,17 +172,11 @@
             if (params.find("param[name=drillAll]").length != 0) {
                 output.slice.drillAll = toBoolean(params.find("param[name=drillAll]").text());
             }
-            if (params.find("param[name=useOlapFormatting]").length != 0) {
-                output.slice.useOlapFormatting = toBoolean(params.find("param[name=useOlapFormatting]").text());
-            }
             if (slice.find("expandAll").length != 0) {
                 output.slice.expandAll = toBoolean(slice.find("expandAll").text());
             }
             if (slice.find("drillAll").length != 0) {
                 output.slice.drillAll = toBoolean(slice.find("drillAll").text());
-            }
-            if (slice.find("useOlapFormatting").length != 0) {
-                output.slice.useOlapFormatting = toBoolean(slice.find("useOlapFormatting").text());
             }
         }
     }
@@ -575,6 +569,9 @@
             }
             if (params.find("param[name=showMemberProperties]").length != 0) {
                 options.showMemberProperties = toBoolean(params.find("param[name=showMemberProperties]").text());
+            }
+            if (params.find("param[name=useOlapFormatting]").length != 0) {
+                options.useOlapFormatting = toBoolean(params.find("param[name=useOlapFormatting]").text());
             }
         }
     }
