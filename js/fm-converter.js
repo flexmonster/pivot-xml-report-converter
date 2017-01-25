@@ -156,10 +156,6 @@
                 output.slice.flatOrder = flatOrderFromXML(xml.find("defaultSlice flatOrder hierarchyName"));
             }
             // other
-            var props = xml.find("defaultSlice properties level");
-            if (props.length > 0) {
-                output.slice.memberProperties = memberPropertiesFromXML(props);
-            }
             var prefilter = xml.find("defaultSlice prefilter hierarchy");
             if (prefilter.length > 0) {
                 output.slice.prefilter = prefilterFromXML(prefilter);
