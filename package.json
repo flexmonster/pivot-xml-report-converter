@@ -1,0 +1,24 @@
+{
+  "name": "pivot-xml-report-converter",
+  "version": "1.0.0",
+  "description": "A module for xml report to json report converting",
+  "author": "Flexmonster",
+  "bin": {
+    "pivot-xml-report-converter": "./js"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flexmonster/pivot-xml-report-converter.git"
+  },
+  "main": "./js/fm-converter.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flexmonster/pivot-xml-report-converter/issues"
+  },
+  "homepage": "https://github.com/flexmonster/pivot-xml-report-converter",
+  "dependencies": {
+    "cheerio": "^0.22.0"
+  },
+  "devDependencies": {}
+}
