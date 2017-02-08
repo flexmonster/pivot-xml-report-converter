@@ -25,21 +25,15 @@ $ npm install pivot-xml-report-converter
 ```
 #### Examples
 
-```bash
-$ node
-> var converter = require('pivot-xml-report-converter');
-undefined
-> converter(xmlString)
-{
-	...
-}
+```js
+var converter = require('pivot-xml-report-converter');
+var xml = '<config>' +
+            '<dataSource type="csv">' +
+              '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
+            '</dataSource>' +
+          '</config>';
+var json = converter(xml);
+console.log(json);
 ```		
-The xmlString is type of `String`. 
-
-```bash
-> converter('<config></config>')
-{}
-> converter('<config><dataSource type="csv"></dataSource></config>')
-{\n 	"dataSource": {\n 	"dataSourceType": "csv"\n 	}\n}
-```
+The xml is type of `String`. 
 In `index.js` you can find the example with reading a local `.XML` file and passing the `String` data to the converter.
