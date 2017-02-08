@@ -3,8 +3,8 @@
 Flexmonster utility to convert old XML pivot reports (versions 1.5-2.2) to new JSON format (version 2.3+).
 Online version is [available on Flexmonser website](http://www.flexmonster.com/convert-xml-report/).
 
-## Usage	
-	### Simple html page
+## Usage
+### Simple html page
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/fm-converter.js"></script>
@@ -18,12 +18,12 @@ var json = fmCovertXmlReport(xml);
 console.log(json);
 </script>
 ```
-	### Npm module 
-		#### Installation
+### Npm module 
+#### Installation
 ```bash
 $ npm install pivot-xml-report-converter
 ```
-		#### Examples
+#### Examples
 
 ```bash
 $ node
