@@ -1,6 +1,6 @@
 {
   "name": "pivot-xml-report-converter",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A module for xml report to json report converting",
   "author": "Flexmonster",
   "bin": {
