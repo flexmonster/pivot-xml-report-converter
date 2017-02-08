@@ -1,14 +1,29 @@
 (function() {
-    window.fmCovertXmlReport = function(input) {
-        var output = convert(input);
+    var npm = false;
+
+    if (typeof module != "undefined") {
+        module.exports = function(input) {
+            $ = require('cheerio');
+            npm = true;
+            return toJsonReport(input);
+        }
+    } else {
+        window.fmCovertXmlReport = function(input) {
+            npm = false;
+            return toJsonReport(input);
+        }
+    }
+
+    function toJsonReport(input){
+        var output = convert(input);        
         return JSON.stringify(output, null, 2) + convertEmbeddedData(output, input);
     }
 
     function convert(input) {
         var output = {};
         try {
-            var xml = $($.parseXML(input));
-            xml = xml.find("config").eq(0);
+            var xml = npm ? $.load(input,{normalizeWhitespace: true,xmlMode: true}) : $($.parseXML(input));
+            xml = npm ? xml("config") : xml.find("config").eq(0);
             if (xml == null || !xml.length) {
                 return output;
             }
@@ -22,7 +37,7 @@
             convertLocalization(xml, output);
         } catch (e) {
             console.error(e);
-            alert(e.toString());
+            if(!npm) alert(e.toString());
         }
         return output;
     }
@@ -766,7 +781,7 @@
 
     function convertEmbeddedData(output, input) {
         var embeddedData = "";
-        if (output.dataSource.hasOwnProperty("embedded") && output.dataSource.embedded == false ) return embeddedData;
+        if (output.dataSource != null && output.dataSource.hasOwnProperty("embedded") && output.dataSource.embedded == false ) return embeddedData;
         var pointerConfigSign = input.indexOf("</config>");
         var pointerStartSign = input.indexOf("<!--",pointerConfigSign);
         if (pointerStartSign > -1) {
