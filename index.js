@@ -1,4 +1,4 @@
-var converter = require('./js/fm-converter.js');
+var converter = require('pivot-xml-report-converter');
 
 readTextFile();
 var result = "";

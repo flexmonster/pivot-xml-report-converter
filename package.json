@@ -9,7 +9,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flexmonster/pivot-xml-report-converter.git"
+    "url": "https://github.com/flexmonster/pivot-xml-report-converter.git"
   },
   "main": "./js/fm-converter.js",
   "license": "MIT",

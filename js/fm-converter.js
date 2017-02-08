@@ -15,7 +15,7 @@
     }
 
     function toJsonReport(input){
-        var output = convert(input);        
+        var output = convert(input);
         return JSON.stringify(output, null, 2) + convertEmbeddedData(output, input);
     }
 
