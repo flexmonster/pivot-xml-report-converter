@@ -1,10 +1,15 @@
 # Convert XML pivot reports to JSON format
+[![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://flexmonster.com)
+Website: www.flexmonster.com
 
-Flexmonster utility to convert old XML pivot reports (versions 1.5-2.2) to new JSON format (version 2.3+).
+## Flexmonster Pivot Table & Charts
+Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources fast and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
+
+This repositiry contains the source code for Flexmonster utility to convert old XML pivot reports (versions 1.5-2.2) to new JSON format (version 2.3+).
 Online version is [available on Flexmonser website](http://www.flexmonster.com/convert-xml-report/).
 
 ## Usage
-### Simple html page
+### Simple HTML page
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/fm-converter.js"></script>
@@ -18,7 +23,7 @@ var json = fmCovertXmlReport(xml);
 console.log(json);
 </script>
 ```
-### Npm module 
+### npm module 
 #### Installation
 ```bash
 $ npm install pivot-xml-report-converter
