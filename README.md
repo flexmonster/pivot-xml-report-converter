@@ -23,7 +23,7 @@ To use the converter as an npm module, you will need npm. [Get it here](https://
 
 ### npm module 
 
-1. Install the converter with npm with the following command:
+1. Install the converter with the following npm command:
 
 ```bash
 npm install pivot-xml-report-converter
