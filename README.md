@@ -8,8 +8,48 @@ Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. I
 This repositiry contains the source code for Flexmonster utility to convert old XML pivot reports (versions 1.5-2.2) to new JSON format (version 2.3+).
 Online version is [available on Flexmonser website](http://www.flexmonster.com/convert-xml-report/).
 
+Table of contents:
+
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+    - [npm module](#npm-module)
+    - [Simple HTML page](#simple-html-page)
+
+## Prerequisites
+
+To use the converter as an npm module, you will need npm. [Get it here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if it's not already installed on your machine.
+
 ## Usage
+
+### npm module 
+
+1. Install the converter with npm with the following console command:
+
+```bash
+$ npm install pivot-xml-report-converter
+```
+
+2. Use the converter in your project. It can be done like this:
+
+```js
+var converter = require('pivot-xml-report-converter');
+var xml = '<config>' +
+            '<dataSource type="csv">' +
+              '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
+            '</dataSource>' +
+          '</config>';
+var json = converter(xml);
+console.log(json);
+```
+
+The xml is type of `String`. 
+
+In `index.js`, you can find the example with reading a local `.XML` file and passing the `String` data to the converter.
+
 ### Simple HTML page
+
+Add the following code to your web page:
+
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/fm-converter.js"></script>
@@ -23,22 +63,3 @@ var json = fmCovertXmlReport(xml);
 console.log(json);
 </script>
 ```
-### npm module 
-#### Installation
-```bash
-$ npm install pivot-xml-report-converter
-```
-#### Examples
-
-```js
-var converter = require('pivot-xml-report-converter');
-var xml = '<config>' +
-            '<dataSource type="csv">' +
-              '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
-            '</dataSource>' +
-          '</config>';
-var json = converter(xml);
-console.log(json);
-```		
-The xml is type of `String`. 
-In `index.js` you can find the example with reading a local `.XML` file and passing the `String` data to the converter.
