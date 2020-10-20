@@ -10,14 +10,9 @@ Online version is [available on Flexmonser website](http://www.flexmonster.com/c
 
 Table of contents:
 
-- [Prerequisites](#prerequisites)
 - [Usage](#usage)
     - [npm module](#npm-module)
     - [Simple HTML page](#simple-html-page)
-
-## Prerequisites
-
-To use the converter as an npm module, you will need npm. [Get it here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if it's not already installed on your machine.
 
 ## Usage
 
