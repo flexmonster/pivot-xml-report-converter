@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/flexmonster/pivot-xml-report-converter",
   "dependencies": {
-    "cheerio": "^0.22.0"
-  },
-  "devDependencies": {}
+    "cheerio": "^1.0.0-rc.12"
+  }
 }
