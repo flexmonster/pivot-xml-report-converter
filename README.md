@@ -27,13 +27,13 @@ npm install pivot-xml-report-converter
 2. Use the converter in your project. It can be done as follows:
 
 ```js
-var converter = require('pivot-xml-report-converter');
-var xml = '<config>' +
+let converter = require('pivot-xml-report-converter');
+let xml = '<config>' +
             '<dataSource type="csv">' +
               '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
             '</dataSource>' +
           '</config>';
-var json = converter(xml);
+let json = converter(xml);
 console.log(json);
 ```
 
@@ -47,12 +47,12 @@ Add the following code to your page:
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="js/fm-converter.js"></script>
 <script type="text/javascript">
-var xml = '<config>' +
+let xml = '<config>' +
             '<dataSource type="csv">' +
               '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
             '</dataSource>' +
           '</config>';
-var json = fmCovertXmlReport(xml);
+let json = fmCovertXmlReport(xml);
 console.log(json);
 </script>
 ```
