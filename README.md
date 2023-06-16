@@ -1,20 +1,20 @@
-# Convert XML pivot reports to JSON format
+# XML-to-JSON report converter
 [![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://flexmonster.com)
 Website: www.flexmonster.com
 
 ## Flexmonster Pivot Table & Charts
 Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources fast and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
 
-This repositiry contains the source code for Flexmonster utility to convert old XML pivot reports (versions 1.5-2.2) to new JSON format (version 2.3+).
-Online version is [available on Flexmonser website](http://www.flexmonster.com/convert-xml-report/).
+This repository contains the utility for converting old XML reports (versions 1.5 through 2.2) to JSON format (version 2.3 and later).
+You can also use the online version of the converter, which is [available on our website](https://www.flexmonster.com/convert-xml-report/).
 
 Table of contents:
 
-- [Usage](#usage)
+- [Installation and usage](#installation-and-usage)
     - [npm module](#npm-module)
     - [Simple HTML page](#simple-html-page)
 
-## Usage
+## Installation and usage
 
 ### npm module 
 
@@ -24,7 +24,7 @@ Table of contents:
 npm install pivot-xml-report-converter
 ```
 
-2. Use the converter in your project. It can be done like this:
+2. Use the converter in your project. It can be done as follows:
 
 ```js
 var converter = require('pivot-xml-report-converter');
@@ -37,13 +37,11 @@ var json = converter(xml);
 console.log(json);
 ```
 
-The xml is type of `String`. 
-
-In `index.js`, you can find the example with reading a local `.XML` file and passing the `String` data to the converter.
+Note that the `xml` should have the `String` type. In the `index.js` file, you can find an example of reading a local `.XML` file and passing the `String` data to the converter.
 
 ### Simple HTML page
 
-Add the following code to your web page:
+Add the following code to your page:
 
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
