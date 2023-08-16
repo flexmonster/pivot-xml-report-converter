@@ -43,6 +43,8 @@ console.log(jsonReport);
 </script>
 ```
 
+Note that the `xmlReport` should have the `String` type. In the `pivot-xml-report-converter/index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
+
 ### npm module 
 
 1. Install the converter with the following npm command:
@@ -64,4 +66,4 @@ let jsonReport = converter(xmlReport);
 console.log(jsonReport);
 ```
 
-Note that the `xml` should have the `String` type. In the `index.js` file, you can find an example of reading a local `.XML` file and passing the `String` data to the converter.
+Note that the `xmlReport` should have the `String` type. In the `pivot-xml-report-converter/index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
