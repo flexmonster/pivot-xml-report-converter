@@ -35,7 +35,7 @@ The converter is located in the `pivot-xml-report-converter/js/` folder.
 <script type="text/javascript">
 const xmlReport = '<config>' +
                     '<dataSource type="csv">' +
-                      '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
+                      '<filename>https://cdn.flexmonster.com/data/data.csv</filename>' +
                     '</dataSource>' +
                   '</config>';
 let jsonReport = fmCovertXmlReport(xmlReport);
@@ -57,7 +57,7 @@ npm install pivot-xml-report-converter
 let converter = require('pivot-xml-report-converter');
 const xmlReport = '<config>' +
                     '<dataSource type="csv">' +
-                      '<filename>https://s3.amazonaws.com/flexmonster/2.3/data/data.csv</filename>' +
+                      '<filename>https://cdn.flexmonster.com/data/data.csv</filename>' +
                     '</dataSource>' +
                   '</config>';
 let jsonReport = converter(xmlReport);
