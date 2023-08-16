@@ -1,5 +1,5 @@
 # XML-to-JSON report converter
-[![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://flexmonster.com/?r=github)
+[![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://www.flexmonster.com/?r=github)
 Website: [www.flexmonster.com](https://www.flexmonster.com/?r=github)
 
 ## Flexmonster Pivot Table & Charts
@@ -24,7 +24,7 @@ Table of contents:
 git clone https://github.com/flexmonster/pivot-xml-report-converter.git
 ```
 
-The converter is located in the `pivot-xml-report-converter/js/` folder.
+The converter is located in the `js/` folder.
 
 2. Use the converter in your project. It can be done as follows:
 
@@ -43,7 +43,7 @@ console.log(jsonReport);
 </script>
 ```
 
-Note that the `xmlReport` should have the `String` type. In the `pivot-xml-report-converter/index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
+Note that the `xmlReport` should have the `String` type. In the `index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
 
 ### npm module 
 
@@ -66,4 +66,4 @@ let jsonReport = converter(xmlReport);
 console.log(jsonReport);
 ```
 
-Note that the `xmlReport` should have the `String` type. In the `pivot-xml-report-converter/index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
+Note that the `xmlReport` should have the `String` type. In the `index.js` file, you can find an example of reading a local `.xml` file and passing the `String` data to the converter.
