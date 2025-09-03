@@ -3,7 +3,7 @@
 Website: [www.flexmonster.com](https://www.flexmonster.com/?r=github)
 
 ## Flexmonster Pivot Table & Charts
-Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources fast and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
+Flexmonster Pivot Table & Charts is a powerful and fully customizable JavaScript component for web reporting. It is packed with all core features for data analysis and can easily become a part of your data visualization project. The tool supports popular frameworks like React, Vue, Angular, Blazor, and [more](https://www.flexmonster.com/doc/available-tutorials-integration/?r=github). Also, Flexmonster connects to [any data source](https://www.flexmonster.com/doc/supported-data-sources/?r=github), including SQL and NoSQL databases, JSON and CSV files, OLAP cubes, and Elasticsearch.
 
 This repository contains the utility for converting Flexmonster reports from old XML format (versions 1.5 through 2.2) to JSON format (version 2.3 and later).
 You can also use the converter's online version, which is [available on our website](https://www.flexmonster.com/convert-xml-report/?r=github).
@@ -11,8 +11,8 @@ You can also use the converter's online version, which is [available on our webs
 Table of contents:
 
 - [Installation and usage](#installation-and-usage)
-- [GitHub package](#github-package)
-- [npm module](#npm-module)
+  - [GitHub package](#github-package)
+  - [npm module](#npm-module)
 - [Support and feedback](#support-and-feedback)
 - [Flexmonster licensing](#flexmonster-licensing)
 - [Social media](#social-media)
